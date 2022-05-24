@@ -1,12 +1,19 @@
 package com.example.rickandmorty.main.ui
 
-import com.example.rickandmorty.main.models.character.CharacterApi
-import com.example.rickandmorty.main.models.episode.EpisodeApi
-import com.example.rickandmorty.main.models.location.LocationApi
+import com.example.rickandmorty.common.BaseFragmentContract
+import com.example.rickandmorty.common.MvpPresenter
+import com.example.rickandmorty.common.MvpView
+import com.example.rickandmorty.main.model.Results
 
-interface RickMortyView {
-    fun showCharacterData(data: CharacterApi)
-    fun showLocationData(data: LocationApi)
-    fun showEpisodeData(data: EpisodeApi)
-    fun onFail(throwable: Throwable)
+interface RickMortyView : BaseFragmentContract {
+    interface View : MvpView {
+        fun showHeroList(results: List<Results>)
+        fun onFail(throwable: Throwable)
+    }
+
+    interface Presenter : MvpPresenter<View> {
+        fun getCharacterList()
+    }
+
+
 }

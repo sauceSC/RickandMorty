@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/item_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/activity_character_info.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/fragment_character_info.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/fragment_hero_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/fragment_recycler_rick_and_morty.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/fragment_rickandmorty_textview.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Desktop/Don/Work/Presentations/Android projects/RickandMorty/app/src/main/res/layout/item_main.xml" value="0.1" />
       </map>
     </option>
   </component>

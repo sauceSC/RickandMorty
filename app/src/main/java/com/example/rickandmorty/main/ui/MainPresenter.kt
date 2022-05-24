@@ -1,67 +1,30 @@
 package com.example.rickandmorty.main.ui
 
-import com.example.rickandmorty.main.api.RickAndMortyAPI
-import com.example.rickandmorty.main.models.character.CharacterApi
-import com.example.rickandmorty.main.models.episode.EpisodeApi
-import com.example.rickandmorty.main.models.location.LocationApi
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import android.util.Log
+import com.example.rickandmorty.common.BasePresenter
+import com.example.rickandmorty.main.interactor.MainInteractor
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import timber.log.Timber
 
-class MainPresenter(private val rickMorty: RickAndMortyAPI) {
-    private var rickMortyView: RickMortyView? = null
+class MainPresenter(
+    private val interactor: MainInteractor
+) : BasePresenter<RickMortyView.View>(),
+    RickMortyView.Presenter{
 
-    fun attach(view: RickMortyView){
-        rickMortyView = view
-    }
+    private val presenterScope = CoroutineScope(Dispatchers.Main.immediate)
 
-    fun detach() {
-        rickMortyView = null
-    }
-
-    fun getCharacterData() {
-        rickMorty.getCharacters().enqueue(object : Callback<CharacterApi> {
-            override fun onFailure(call: Call<CharacterApi>, throwable: Throwable) {
-                rickMortyView?.onFail(throwable)
-            }
-
-            override fun onResponse(call: Call<CharacterApi>, response: Response<CharacterApi>) {
-                if (response.isSuccessful && response.body() != null) {
-                    val data = response.body()!!
-                    rickMortyView?.showCharacterData(data)
-                }
+    override fun getCharacterList() {
+        presenterScope.launch {
+            try {
+                Log.i("###", "presenter")
+                val data = interactor.getResults()
+                view?.showHeroList(data)
+            } catch (t: Throwable) {
+                Log.i("###", "onfailed")
+                Timber.e(t.message)
             }
         }
-        )
-    }
-
-    fun getLocationData(){
-        rickMorty.getLocation().enqueue(object : Callback<LocationApi>{
-            override fun onFailure(call: Call<LocationApi>, throwable: Throwable) {
-                rickMortyView?.onFail(throwable)
-            }
-
-            override fun onResponse(call: Call<LocationApi>, response: Response<LocationApi>) {
-                if (response.isSuccessful && response.body() != null) {
-                    val data = response.body()!!
-                    rickMortyView?.showLocationData(data)
-                }
-            }
-        })
-    }
-
-    fun getEpisodeData(){
-        rickMorty.getEpisode().enqueue(object : Callback<EpisodeApi>{
-            override fun onFailure(call: Call<EpisodeApi>, throwable: Throwable) {
-                rickMortyView?.onFail(throwable)
-            }
-
-            override fun onResponse(call: Call<EpisodeApi>, response: Response<EpisodeApi>) {
-                if (response.isSuccessful && response.body() != null) {
-                    val data = response.body()!!
-                    rickMortyView?.showEpisodeData(data)
-                }
-            }
-        })
     }
 }
