@@ -1,5 +1,6 @@
 package com.example.rickandmorty.utils
 
 object Utils {
-    val BASE_URL = "https://rickandmortyapi.com/api/"
+    const val BASE_URL = "https://rickandmortyapi.com/api/"
+    const val TABLE_NAME = "Rick-And-Morty-Database"
 }

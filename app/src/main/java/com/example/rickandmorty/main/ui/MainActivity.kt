@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.ActivityMainBinding
 import com.example.rickandmorty.common.BaseActivity
+import com.example.rickandmorty.main.ui.fragments.RecyclerRickFragment
 
 class MainActivity() : BaseActivity(){
 

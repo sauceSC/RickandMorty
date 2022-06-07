@@ -1,6 +1,5 @@
 package com.example.rickandmorty.common
 
-
 import androidx.annotation.AnimRes
 
 interface BaseFragmentContract {

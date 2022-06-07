@@ -1,4 +1,4 @@
-package com.example.rickandmorty.main.ui
+package com.example.rickandmorty.main.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharacterInfoBinding
-import com.example.rickandmorty.main.api.model.ResultsResponse
 import com.example.rickandmorty.main.model.Results
 
 class CharacterInfoFragment : Fragment(R.layout.fragment_character_info){

@@ -1,6 +1,6 @@
 package com.example.rickandmorty.main.main
 
-import com.example.rickandmorty.main.api.RickAndMortyAPI
+import com.example.rickandmorty.main.api.RickMortyAPI
 import com.example.rickandmorty.utils.Utils
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,7 +23,7 @@ object CommonModule {
                 .baseUrl(Utils.BASE_URL)
                 .client(client)
                 .build()
-            retrofit.create(RickAndMortyAPI::class.java)
+            retrofit.create(RickMortyAPI::class.java)
         }
     }
 }

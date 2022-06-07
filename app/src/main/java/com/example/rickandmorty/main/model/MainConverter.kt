@@ -17,19 +17,8 @@ object MainConverter {
                 species = result.species,
                 type = result.type,
                 gender = result.gender,
-                origin = fromNetwork(result.origin),
                 image = result.image,
-                episode = result.episode,
-                url = result.url,
-                created = result.created
             )
         }
     }
-
-    private fun fromNetwork(response: OriginResponse) =
-        Origin(
-            name = response.name,
-            url = response.url
-        )
-
 }

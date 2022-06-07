@@ -1,4 +1,4 @@
-package com.example.rickandmorty.main.repository
+package com.example.rickandmorty.main.repository.remote
 
 import com.example.rickandmorty.main.model.Results
 
